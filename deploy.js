@@ -3,8 +3,8 @@ const Web3 = require('web3');
 const { interface, bytecode } = require('./compile')
 
 const provider = new HDWalletProvider(
-    'bright ivory cross absent idle start decorate river bleak baby fault sword',
-    'https://rinkeby.infura.io/v3/8ffea91b158e4ec1966aac3d61b3b928'
+    '*Mneumonics*',
+    '*Infura link the contract has to be deployed*'
 );
 
 const web3 = new Web3(provider);
@@ -18,6 +18,7 @@ const deploy = async () => {
                     .deploy({ data: bytecode, arguments: ['Hi there!'] })
                     .send({ gas: '1000000', from: accounts[0] });
     
+    console.log(interface);
     console.log('Contract deployed to', result.options.address);
 
     provider.engine.stop();
